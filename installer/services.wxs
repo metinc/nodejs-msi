@@ -4,11 +4,11 @@
   <Fragment>
   
     <CustomAction
-      Id='RegisterMyProductService'
-      Impersonate="no"  
+      Id='RegisterLabShareService'
+      Impersonate="no"
       Execute="deferred" 
       FileKey='nssm'
-      ExeCommand='install "MyProduct Service" "[INSTALLDIR]\node.exe" "\"[INSTALLDIR]\server.js\""'
+      ExeCommand='install "LabShare Service" "[INSTALLDIR]\node.exe" "\"[INSTALLDIR]\index.js\""'
       Return='asyncWait' />
 
   </Fragment>
