@@ -8,7 +8,7 @@
       Impersonate="no"
       Execute="deferred" 
       FileKey='nssm'
-      ExeCommand='install "LabShare Service" "[INSTALLDIR]\node.exe" "\"[INSTALLDIR]\index.js\""'
+      ExeCommand='install "LabShare Service" "[INSTALLDIR]node.exe" "\"[INSTALLDIR]index.js\""'
       Return='asyncWait' />
 
   </Fragment>
