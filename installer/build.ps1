@@ -3,7 +3,6 @@ $ErrorActionPreference = "Stop"
 #Clean
 @(
     'output'
-    'installer.msi'
     'directory.wxs'
 ) |
 Where-Object { Test-Path $_ } |
@@ -19,7 +18,6 @@ mkdir $tmp_dir
 
 #Copy excluding .git and installer
 robocopy ..\ $tmp_dir /COPYALL /S /NFL /NDL /NS /NC /NJH /NJS /XD .git installer
-Copy-Item "C:\Program Files (x86)\nodejs\node.exe" $tmp_dir\bin
 
 If (Test-Path $tmp_dir\config.json){
     Remove-Item $tmp_dir\config.json
