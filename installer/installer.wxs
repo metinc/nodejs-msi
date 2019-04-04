@@ -14,11 +14,12 @@
 
     <Media Id='1' EmbedCab='yes' Cabinet="main.cab" />
 
-    <WixVariable Id="WixUILicenseRtf" Value="$(var.SourceDir)\LICENSE.rtf" />
-    <WixVariable Id="WixUIBannerBmp" Value="$(var.SourceDir)\public\images\msi-banner.bmp" />
-    <WixVariable Id="WixUIDialogBmp" Value="$(var.SourceDir)\public\images\msi-welcome.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.SourceDir)\installer_resources\LICENSE.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value="$(var.SourceDir)\installer_resources\banner.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="$(var.SourceDir)\installer_resources\welcome.png" />
 
-    <Icon Id="icon.ico" SourceFile="$(var.SourceDir)\public\images\logo.ico"/>
+    <!-- icon displayed in Add/Remove Programs -->
+    <Icon Id="icon.ico" SourceFile="$(var.SourceDir)\installer_resources\logo.ico"/>
     <Property Id="ARPPRODUCTICON" Value="icon.ico" />
 
 
@@ -63,7 +64,7 @@
         <ServiceControl Id="ControlMyProductService"
                          Name="LabShare Storage Service"
                          Remove="uninstall"
-        				 Start="install"
+        		        		 Start="install"
                          Stop="both" />
       </Component>
    
