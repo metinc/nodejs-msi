@@ -17,7 +17,7 @@ Remove-Item $tmp_dir
 mkdir $tmp_dir
 
 #Copy excluding .git and installer
-robocopy ..\ $tmp_dir /COPYALL /S /NFL /NDL /NS /NC /NJH /NJS /XD .git installer
+robocopy ..\ $tmp_dir /COPYALL /S /NFL /NDL /NS /NC /NJH /NJS /XD
 
 If (Test-Path $tmp_dir\config.json){
     Remove-Item $tmp_dir\config.json

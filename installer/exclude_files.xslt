@@ -10,9 +10,13 @@
   <!-- find .gitignore file -->
   <xsl:key name="gitignoreRemove" match="wix:Component[ contains(wix:File/@Source, '.gitignore') ]" use="@Id" />
 
+  <!-- find .git directory -->
+  <xsl:key name="gitDir" match="wix:Directory[@Name = '.git']" use="@Id" />
+  <xsl:key name="gitRef" match="wix:Component[ancestor::wix:Directory[@Name = '.git']]" use="@Id" />
+
   <!-- find installer directory -->
-  <xsl:key name="installerDir" match="wix:Directory[@Name = 'installer_resources']" use="@Id" />
-  <xsl:key name="installerRef" match="wix:Component[ancestor::wix:Directory[@Name = 'installer_resources']]" use="@Id" />
+  <xsl:key name="installerDir" match="wix:Directory[@Name = 'installer']" use="@Id" />
+  <xsl:key name="installerRef" match="wix:Component[ancestor::wix:Directory[@Name = 'installer']]" use="@Id" />
 
   <!-- By default, copy all elements and nodes into the output... -->
   <xsl:template match="@*|node()">
@@ -24,6 +28,9 @@
   <!-- ...but if the element has a matching key then don't render anything (i.e. removing it from the output) -->
   <xsl:template match="*[ self::wix:Component or self::wix:ComponentRef ][ key( 'gitignoreRemove', @Id ) ]" />
 
+  <xsl:template match="*[ self::wix:Directory ][ key( 'gitDir', @Id ) ]" />
+  <xsl:template match="wix:ComponentRef[key('gitRef', @Id)]" />
+  
   <xsl:template match="*[ self::wix:Directory ][ key( 'installerDir', @Id ) ]" />
   <xsl:template match="wix:ComponentRef[key('installerRef', @Id)]" />
 

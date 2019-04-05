@@ -14,12 +14,12 @@
 
     <Media Id='1' EmbedCab='yes' Cabinet="main.cab" />
 
-    <WixVariable Id="WixUILicenseRtf" Value="$(var.SourceDir)\installer_resources\LICENSE.rtf" />
-    <WixVariable Id="WixUIBannerBmp" Value="$(var.SourceDir)\installer_resources\banner.png" />
-    <WixVariable Id="WixUIDialogBmp" Value="$(var.SourceDir)\installer_resources\welcome.png" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.SourceDir)\installer\resources\LICENSE.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value="$(var.SourceDir)\installer\resources\banner.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="$(var.SourceDir)\installer\resources\welcome.png" />
 
     <!-- icon displayed in Add/Remove Programs -->
-    <Icon Id="icon.ico" SourceFile="$(var.SourceDir)\installer_resources\logo.ico"/>
+    <Icon Id="icon.ico" SourceFile="$(var.SourceDir)\installer\resources\logo.ico"/>
     <Property Id="ARPPRODUCTICON" Value="icon.ico" />
 
 
