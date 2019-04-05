@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-#Clean
+# clean
 @(
     'output'
     'directory.wxs'
@@ -8,31 +8,19 @@ $ErrorActionPreference = "Stop"
 Where-Object { Test-Path $_ } |
 ForEach-Object { Remove-Item $_ -Recurse -Force -ErrorAction Stop }
 
-#create output dir
+# create output dir
 mkdir output
 
-#Create a tmpdir
-$tmp_dir = [io.path]::GetTempFileName()
-Remove-Item $tmp_dir
-mkdir $tmp_dir
+# get source dir
+$source_dir = "..\"
 
-#Copy excluding .git and installer
-robocopy ..\ $tmp_dir /COPYALL /S /NFL /NDL /NS /NC /NJH /NJS /XD
-
-If (Test-Path $tmp_dir\config.json){
-    Remove-Item $tmp_dir\config.json
-}
-
-#Generate the installer
+# generate the installer
 $wix_dir="c:\Program Files (x86)\WiX Toolset v3.11\bin"
 
-. "$wix_dir\heat.exe" dir $tmp_dir -srd -dr INSTALLDIR -cg MainComponentGroup -out directory.wxs -ke -sfrag -gg -var var.SourceDir -sreg -scom -t exclude_files.xslt
-. "$wix_dir\candle.exe" -dSourceDir="$tmp_dir" *.wxs -o output\ -ext WiXUtilExtension
+. "$wix_dir\heat.exe" dir $source_dir -srd -dr INSTALLDIR -cg MainComponentGroup -out directory.wxs -ke -sfrag -gg -var var.SourceDir -sreg -scom -t exclude_files.xslt
+. "$wix_dir\candle.exe" -dSourceDir="$source_dir" *.wxs -o output\ -ext WiXUtilExtension
 . "$wix_dir\light.exe" -o output\installer.msi output\*.wixobj -cultures:en-US -ext WixUIExtension.dll -ext WiXUtilExtension
 
-# Optional digital sign the certificate. 
-# You have to previously import it.
+# optional digital sign the certificate. 
+# you have to previously import it.
 #. "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\signtool.exe" sign /n "Auth10" .\output\installer.msi
-
-#Remove the temp
-Remove-Item -Recurse -Force $tmp_dir
