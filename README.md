@@ -19,28 +19,15 @@ Every component installed is properly rolled back on uninstall.
 
 ## PreRequisites
 
-You need WIX, node.js, nssm.exe.
+You need to have WIX Toolset 3.11 and node.js installed.
 
-There paths hardcoded all over the example but if something fails you get a very good message.
+The paths are hardcoded all over the example but if something fails you get a very good message.
 
-## Building
+## Usage
 
-Run `installer\build.ps1` on powershell.
-
-## How it works
-
-First the script will copy everything to a temporary directory excluding directories such as `.git`.
-
-Then we run WIX `heat.exe` to generate a wxs of all our files with a ComponentGroup (installer\directory).
-
-## Issue Reporting
-
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
-
-## Author
-
-[Auth0](auth0.com)
-
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
+1.  Open `installer/installer.wxs` in a text editor.
+2.  In line 5 and 6 enter GUIDs. You can use an [online generator](https://www.guidgen.com/).
+3.  Open a new powershell as administrator.
+4.  Enable execution of powershell scripts by entering: `Set-ExecutionPolicy RemoteSigned`
+5.  Navigate into the installer directory.
+6.  Run `.\build.ps1` on powershell.
