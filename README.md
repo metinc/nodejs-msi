@@ -17,9 +17,9 @@ Every component installed is properly rolled back on uninstall.
 1.  node.exe is an small file and an standalone file
 2.  we don't want to mess with other applications
 
-## PreRequisites
+## Prerequisites
 
-You need to have WiX Toolset 3.11 and node.js installed.
+You need to have [WiX Toolset 3.11](http://wixtoolset.org/releases/) and [node.js](https://nodejs.org/en/download/) installed.
 
 The paths are hardcoded all over the example but if something fails you get a very good message.
 
