@@ -45,7 +45,7 @@
     </CustomAction>
 
     <InstallExecuteSequence>
-      <Custom Action='RegisterLabShareService'
+      <Custom Action='RegisterService'
               Before='StartServices'>NOT Installed</Custom>
       <Custom Action="LaunchBrowser"
               OnExit="success">NOT Installed</Custom>
@@ -62,7 +62,7 @@
         <File Id="nssm" KeyPath="yes" Source=".\binaries\nssm.exe" />
 
         <ServiceControl Id="ControlMyProductService"
-                         Name="LabShare Storage Service"
+                         Name="My Service"
                          Remove="uninstall"
         		        		 Start="install"
                          Stop="both" />
