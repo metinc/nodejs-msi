@@ -8,12 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/auth0/nodejs-msi.git"
+    "url": "https://github.com/metinc/nodejs-msi"
   },
-  "keywords": [
-  ],
-  "author": "Auth0",
+  "keywords": [],
+  "author": "metinc",
   "license": "MIT",
-  "dependencies": {  },
-  "devDependencies": {  }
+  "dependencies": {},
+  "devDependencies": {}
 }
