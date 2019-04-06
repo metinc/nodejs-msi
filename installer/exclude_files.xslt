@@ -8,7 +8,10 @@
   <xsl:strip-space elements="*" />
 
   <!-- find .gitignore file -->
-  <xsl:key name="gitignoreRemove" match="wix:Component[ contains(wix:File/@Source, '.gitignore') ]" use="@Id" />
+  <xsl:key name="gitignore" match="wix:Component[ contains(wix:File/@Source, '.gitignore') ]" use="@Id" />
+
+  <!-- find README.md file -->
+  <xsl:key name="readme" match="wix:Component[ contains(wix:File/@Source, 'README.md') ]" use="@Id" />
 
   <!-- find .git directory -->
   <xsl:key name="gitDir" match="wix:Directory[@Name = '.git']" use="@Id" />
@@ -26,7 +29,9 @@
   </xsl:template>
 
   <!-- ...but if the element has a matching key then don't render anything (i.e. removing it from the output) -->
-  <xsl:template match="*[ self::wix:Component or self::wix:ComponentRef ][ key( 'gitignoreRemove', @Id ) ]" />
+  <xsl:template match="*[ self::wix:Component or self::wix:ComponentRef ][ key( 'gitignore', @Id ) ]" />
+
+  <xsl:template match="*[ self::wix:Component or self::wix:ComponentRef ][ key( 'readme', @Id ) ]" />
 
   <xsl:template match="*[ self::wix:Directory ][ key( 'gitDir', @Id ) ]" />
   <xsl:template match="wix:ComponentRef[key('gitRef', @Id)]" />
