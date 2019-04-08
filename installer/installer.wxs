@@ -5,11 +5,11 @@
   <Product Id="YOUR-GUID-GENERATE-A-NEW-ONE"
           UpgradeCode="GENERATE-ANOTHER-ONE"
           Language='1033' Codepage='1252' Version='1.0.0'
-          Name="MyProduct"
-          Manufacturer='MyCompany'>
+          Name="!(loc.ApplicationName)"
+          Manufacturer="!(loc.ManufacturerName)">
 
-    <Package Id='*' Keywords='Installer' Description="My awesome super product"
-          Comments='Blaaaa' Manufacturer='MyCompany'
+    <Package Id='*' Keywords='Installer' Description="!(loc.Description)"
+          Comments="!(loc.Comments)" Manufacturer="!(loc.ManufacturerName)"
           InstallerVersion='100' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
 
     <Media Id='1' EmbedCab='yes' Cabinet="main.cab" />
@@ -30,14 +30,14 @@
 
     <Directory Id='TARGETDIR' Name='SourceDir'>
       <Directory Id='ProgramFilesFolder' Name='PFiles'>
-        <Directory Id='MyCompany_Folder' Name='MyCompany'>
-          <Directory Id='INSTALLDIR' Name='MyProduct'>
+        <Directory Id='MyCompany_Folder' Name="!(loc.ManufacturerName)">
+          <Directory Id='INSTALLDIR' Name="!(loc.ApplicationName)">
           </Directory>
         </Directory>
       </Directory>
       <Directory Id="ProgramMenuFolder">
         <Directory Id="ApplicationProgramsFolder" 
-                    Name="MyProduct"/>
+                    Name="!(loc.ApplicationName)"/>
       </Directory>
     </Directory>
 
@@ -65,7 +65,7 @@
         <File Id="nssm" KeyPath="yes" Source=".\binaries\nssm.exe" />
 
         <ServiceControl Id="ControlMyProductService"
-                         Name="My Service"
+                         Name="!(loc.ApplicationName) Service"
                          Remove="uninstall"
         		        		 Start="install"
                          Stop="both" />

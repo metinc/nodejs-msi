@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" 
+  xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <String Id="ApplicationName">My Application</String>
+  <String Id="ManufacturerName">My Manufacturer</String>
+  <String Id="Description">My Description</String>
+  <String Id="Comments">My Comment</String>
+</WixLocalization>
