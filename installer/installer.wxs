@@ -19,7 +19,7 @@
     <WixVariable Id="WixUIDialogBmp" Value="$(var.SourceDir)\installer\resources\welcome.png" />
 
     <!-- icon displayed in Add/Remove Programs -->
-    <Icon Id="icon.ico" SourceFile="$(var.SourceDir)\installer\resources\logo.ico"/>
+    <Icon Id="icon.ico" SourceFile="$(var.SourceDir)\public\favicon.ico"/>
     <Property Id="ARPPRODUCTICON" Value="icon.ico" />
 
 
