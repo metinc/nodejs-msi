@@ -35,7 +35,7 @@ The paths are hardcoded all over the example but if something fails you get a ve
 ## Customization
 
 You can edit the files inside `installer/resources` to apply your company design. Note that the ico-file is only displayed under Windows Add/Remove Software. Currently it is not used for any files. 
-Enter your company name and product name in the according fields in installer.wxs. If you change the name of the service you have to change it in installer.wxs and services.wxs. Otherwise the installer will fail and tell you that he was unable to start the service.
+Enter your company name and product name in the according fields in `installer/en-us.wxl`.
 
 ## Exclude files
 
