@@ -1,7 +1,3 @@
 npm-debug.log
 installer/output/*
-installer/installer.msi
 installer/directory.wxs
-
-# Webstorm IDE
-.idea
