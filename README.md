@@ -34,7 +34,8 @@ The paths are hardcoded all over the example but if something fails you get a ve
 
 ## Customization
 
-You can edit the files inside `installer/resources` to apply your company design. Note that the ico-file is only displayed under Windows Add/Remove Software. Currently it is not used for any files. 
+You can edit the files inside `installer/resources` to apply your company design.
+The icon under `public/favicon.ico` is used for the shortcut in the Windows Start menu and for the entry under Windows Add/Remove Software. 
 Enter your company name and product name in the according fields in `installer/en-us.wxl`.
 
 ## Exclude files
