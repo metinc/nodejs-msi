@@ -25,6 +25,9 @@
 
     <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
 
+    <!-- if you delete the next line the installer will choose the drive with the most available free space as root drive -->
+    <Property Id="ROOTDRIVE" Value="C:\"/>
+
     <Directory Id='TARGETDIR' Name='SourceDir'>
       <Directory Id='ProgramFilesFolder' Name='PFiles'>
         <Directory Id='MyCompany_Folder' Name='MyCompany'>
