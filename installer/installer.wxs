@@ -41,17 +41,13 @@
       </Directory>
     </Directory>
 
-    <CustomAction Id="LaunchBrowser"
-          ExeCommand="explorer.exe &quot;http://localhost:9000/&quot;"
-          Directory="INSTALLDIR"
-          Return="asyncNoWait" >
+    <CustomAction Id="LaunchBrowser" ExeCommand="explorer.exe &quot;http://localhost:[PORT]&quot;" Directory="INSTALLDIR" Return="asyncNoWait">
     </CustomAction>
 
     <InstallExecuteSequence>
-      <Custom Action='RegisterService'
-              Before='StartServices'>NOT Installed</Custom>
-      <Custom Action="LaunchBrowser"
-              OnExit="success">NOT Installed</Custom>
+      <Custom Action='RegisterService' Before='StartServices'>NOT Installed</Custom>
+      <Custom Action='SetPort' After='RegisterService'>NOT Installed</Custom>
+      <Custom Action="LaunchBrowser" OnExit="success">NOT Installed</Custom>
     </InstallExecuteSequence>
 
     <Feature Id='Complete' Level='1'>
@@ -74,6 +70,7 @@
     </Feature>
 
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+    <Property Id="PORT" Value="9000" />
 
     <UIRef Id="WixUI" />
 

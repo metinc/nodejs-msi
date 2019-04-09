@@ -11,5 +11,13 @@
       ExeCommand='install "!(loc.ApplicationName) Service" "[INSTALLDIR]node.exe" "\"[INSTALLDIR]server.js\""'
       Return='asyncWait' />
 
+    <CustomAction
+      Id='SetPort'
+      Impersonate="no"
+      Execute="deferred" 
+      FileKey='nssm'
+      ExeCommand='set "!(loc.ApplicationName) Service" AppEnvironmentExtra PORT=[PORT]'
+      Return='asyncWait' />
+
   </Fragment>
 </Wix>

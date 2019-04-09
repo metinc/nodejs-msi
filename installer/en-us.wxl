@@ -5,4 +5,5 @@
   <String Id="ManufacturerName">My Manufacturer</String>
   <String Id="Description">My Description</String>
   <String Id="Comments">My Comment</String>
+  <String Id="PortDlgTitle">{\WixUI_Font_Title}Listening Port</String>
 </WixLocalization>
