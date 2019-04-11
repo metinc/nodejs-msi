@@ -19,5 +19,13 @@
       ExeCommand='set "!(loc.ApplicationName) Service" AppEnvironmentExtra PORT=[PORT]'
       Return='asyncWait' />
 
+    <CustomAction
+      Id='SetServiceDescription'
+      Impersonate="no"
+      Execute="deferred" 
+      FileKey='nssm'
+      ExeCommand='set "!(loc.ApplicationName) Service" Description !(loc.Description)'
+      Return='asyncWait' />
+
   </Fragment>
 </Wix>

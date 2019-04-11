@@ -47,6 +47,7 @@
     <InstallExecuteSequence>
       <Custom Action='RegisterService' Before='StartServices'>NOT Installed</Custom>
       <Custom Action='SetPort' After='RegisterService'>NOT Installed</Custom>
+      <Custom Action='SetServiceDescription' After='SetPort'>NOT Installed</Custom>
       <Custom Action="LaunchBrowser" OnExit="success">NOT Installed</Custom>
     </InstallExecuteSequence>
 
