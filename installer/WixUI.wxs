@@ -61,7 +61,12 @@ First-time install dialog sequence:      Maintenance dialog sequence:
             <Publish Dialog="DirDialog" Control="ChangeFolder" Event="SpawnDialog" Value="BrowseDlg" Order="2">1</Publish>
 
             <Publish Dialog="PortDlg" Control="Back" Event="NewDialog" Value="DirDialog">1</Publish>
-            <Publish Dialog="PortDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+            <Publish Dialog="PortDlg" Control="Next" Event="DoAction" Value="CheckPort" Order="1">1</Publish>
+            <Publish Dialog="PortDlg" Control="Next" Event="NewDialog" Value="PortWarnDlg" Order="2">NOT PORT_BUSY="0"</Publish>
+            <Publish Dialog="PortDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg" Order="3">PORT_BUSY="0"</Publish>
+
+            <Publish Dialog="PortWarnDlg" Control="Back" Event="NewDialog" Value="PortDlg">1</Publish>
+            <Publish Dialog="PortWarnDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
             
             <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="PortDlg" Order="1">NOT Installed</Publish>
             <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2">Installed</Publish>

@@ -19,5 +19,11 @@
         </UI>
 
         <Property Id="PortTemplate"><![CDATA[#####]]></Property>
+
+        <Property Id="PORT_BUSY" Value="0" />
+
+        <CustomAction Id="CheckPort" Return="ignore" Execute="immediate" BinaryKey="PortCheckerBinary" DllEntry="Check" />
+
+        <Binary Id="PortCheckerBinary" SourceFile="PortChecker.CA.dll"/>
     </Fragment>
 </Wix>
