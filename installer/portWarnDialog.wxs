@@ -4,8 +4,8 @@
 
     <!-- port is being used warning dialog -->
     <UI>
-      <Dialog Id="PortWarnDlg" Width="270" Height="105" Title="Port Warning" NoMinimize="yes">
-        <Control Id="Text" Type="Text" X="38" Y="8" Width="240" Height="40" TabSkip="no" Text="Port [PORT] is already being used by [PORT_BUSY]">
+      <Dialog Id="PortWarnDlg" Width="270" Height="105" Title="!(loc.PortWarnDlgTitle)" NoMinimize="yes">
+        <Control Id="Text" Type="Text" X="38" Y="8" Width="240" Height="40" TabSkip="no" Text="!(loc.PortWarnDlgText)">
         </Control>
         <Control Id="Next" Type="PushButton" X="147" Y="80" Width="56" Height="17" Default="yes" Text="!(loc.WixUIIgnore)">
         </Control>
@@ -13,6 +13,6 @@
         </Control>
       </Dialog>
     </UI>
-    
+
     </Fragment>
 </Wix>

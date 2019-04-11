@@ -6,4 +6,8 @@
   <String Id="Description">My Description</String>
   <String Id="Comments">My Comment</String>
   <String Id="PortDlgTitle">{\WixUI_Font_Title}Listening Port</String>
+  <String Id="PortDlgDescription">Leave the default port or set a custom value.</String>
+  <String Id="PortDlgText">The port can be set to a value between 0 and 65535. If you change the default port it is recommended to use a value not below 1024.</String>
+  <String Id="PortWarnDlgTitle">Port Warning</String>
+  <String Id="PortWarnDlgText">Port [PORT] is already being used by [PORT_BUSY].</String>
 </WixLocalization>
