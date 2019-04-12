@@ -1,3 +1,4 @@
 npm-debug.log
 installer/output/*
 installer/directory.wxs
+installer/installer.log

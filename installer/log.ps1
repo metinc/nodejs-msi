@@ -1,0 +1,1 @@
+msiexec /i "output\installer.msi" /L*V "installer.log"
