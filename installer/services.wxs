@@ -8,7 +8,7 @@
       Impersonate="no"
       Execute="deferred" 
       FileKey='nssm'
-      ExeCommand='install "!(loc.ApplicationName) Service" "[INSTALLDIR]node.exe" "\"[INSTALLDIR]server.js\""'
+      ExeCommand='install "!(loc.ApplicationName) Service" "[INSTALLDIR]node.exe" server.js'
       Return='asyncWait' />
 
     <CustomAction
