@@ -22,6 +22,16 @@
 
         <Property Id="PORT_BUSY" Value="0" />
 
+        <!-- This CA deletes spaces from the property PORT. -->
+        <CustomAction Id="TrimPort" Script="vbscript">
+        <![CDATA[         
+          value = Session.Property("PORT")
+          value = Trim(value)
+          Session.Property("PORT") = value      
+        ]]>
+        </CustomAction>
+
+        <!-- This CA checks if the selected port is already in use. -->
         <CustomAction Id="CheckPort" Return="ignore" Execute="immediate" BinaryKey="PortCheckerBinary" DllEntry="Check" />
 
         <Binary Id="PortCheckerBinary" SourceFile="PortChecker.CA.dll"/>
