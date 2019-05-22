@@ -4,7 +4,7 @@
 
   <Product Id="YOUR-GUID-GENERATE-A-NEW-ONE"
           UpgradeCode="GENERATE-ANOTHER-ONE"
-          Language='1033' Codepage='1252' Version='1.0.0'
+          Language='1033' Codepage='1252' Version='$(var.PKGVERSION_NUMBER)'
           Name="!(loc.ApplicationName)"
           Manufacturer="!(loc.ManufacturerName)">
 
