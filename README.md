@@ -19,12 +19,12 @@ The paths are hardcoded but if something fails you get a very good message.
 
 ## Usage
 
-1. Open `installer/installer.wxs` in a text editor.
-2. In line 5 and 6 enter GUIDs. You can use an [online generator](https://www.guidgen.com/).
-3. Open a new powershell as administrator.
-4. Enable execution of powershell scripts by entering: `Set-ExecutionPolicy RemoteSigned`
-5. Navigate into the installer directory.
-6. Run `.\build.ps1` on powershell.
+1. Open a new powershell.
+2. Enable execution of powershell scripts by entering: `Set-ExecutionPolicy RemoteSigned`
+3. Navigate into the installer directory.
+4. Run `.\build.ps1` on powershell.
+5. Find the installer under `installer/output/installer.msi`.
+6. Also make sure to add the generated Guid file under `installer/guid.txt` to your repository and never change it.
 
 ## Customization
 
