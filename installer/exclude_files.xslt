@@ -8,10 +8,10 @@
   <xsl:strip-space elements="*" />
 
   <!-- find .gitignore file -->
-  <xsl:key name="gitignore" match="wix:Component[ contains(wix:File/@Source, '.gitignore') ]" use="@Id" />
+  <xsl:key name="gitignore" match="wix:Component[ parent::wix:DirectoryRef[@Id = 'INSTALLDIR'] and contains(wix:File/@Source, '.gitignore') ]" use="@Id" />
 
   <!-- find README.md file -->
-  <xsl:key name="readme" match="wix:Component[ contains(wix:File/@Source, 'README.md') ]" use="@Id" />
+  <xsl:key name="readme" match="wix:Component[ parent::wix:DirectoryRef[@Id = 'INSTALLDIR'] and contains(wix:File/@Source, 'README.md') ]" use="@Id" />
 
   <!-- find .git directory -->
   <xsl:key name="gitDir" match="wix:Directory[@Name = '.git']" use="@Id" />
